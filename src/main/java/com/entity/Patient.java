@@ -1,6 +1,7 @@
 package com.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Patient {
@@ -14,7 +15,10 @@ public class Patient {
     private String lastName;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private Document document;
+    private Address address;
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "patientTel")
+    private List<Telephone> telephone;
 
     public Integer getId() {
         return id;
@@ -40,11 +44,19 @@ public class Patient {
         this.lastName = lastName;
     }
 
-    public Document getDocument() {
-        return document;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setDocument(Document document) {
-        this.document = document;
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public List<Telephone> getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(List<Telephone> telephone) {
+        this.telephone = telephone;
     }
 }

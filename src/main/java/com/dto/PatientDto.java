@@ -8,7 +8,9 @@ public class PatientDto {
 
     private String lastName;
 
-    private DocumentDto document;
+    private AddressDto address;
+
+    private TelephoneDto telephone;
 
     public Integer getId() {
         return id;
@@ -34,11 +36,19 @@ public class PatientDto {
         this.lastName = lastName;
     }
 
-    public DocumentDto getDocument() {
-        return document;
+    public AddressDto getAddress() {
+        return address;
     }
 
-    public void setDocument(DocumentDto document) {
-        this.document = document;
+    public void setAddress(AddressDto address) {
+        this.address = address;
+    }
+
+    public TelephoneDto getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(TelephoneDto telephone) {
+        this.telephone = telephone;
     }
 }

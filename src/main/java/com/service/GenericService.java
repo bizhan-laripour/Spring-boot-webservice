@@ -25,7 +25,7 @@ public class GenericService<T, K> {
         return genericRepository.getOne(id);
     }
 
-    public T  add(T t){
+    public T  save(T t){
        return genericRepository.save(t);
     }
 

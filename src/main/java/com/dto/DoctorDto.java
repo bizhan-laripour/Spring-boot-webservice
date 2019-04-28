@@ -1,7 +1,5 @@
 package com.dto;
 
-import java.util.List;
-
 public class DoctorDto {
 
     private Integer id;
@@ -10,9 +8,7 @@ public class DoctorDto {
 
     private String lastName;
 
-    private DefinitionsDto medSchool;
-
-    private List<PatientDto> patients;
+    private Long medicineCode;
 
     public Integer getId() {
         return id;
@@ -38,19 +34,11 @@ public class DoctorDto {
         this.lastName = lastName;
     }
 
-    public DefinitionsDto getMedSchool() {
-        return medSchool;
+    public Long getMedicineCode() {
+        return medicineCode;
     }
 
-    public void setMedSchool(DefinitionsDto medSchool) {
-        this.medSchool = medSchool;
-    }
-
-    public List<PatientDto> getPatients() {
-        return patients;
-    }
-
-    public void setPatients(List<PatientDto> patients) {
-        this.patients = patients;
+    public void setMedicineCode(Long medicineCode) {
+        this.medicineCode = medicineCode;
     }
 }

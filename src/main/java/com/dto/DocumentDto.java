@@ -1,28 +1,14 @@
 package com.dto;
 
-
-import java.sql.Date;
 import java.util.List;
 
 public class DocumentDto {
 
     private Integer id;
 
-    private PatientDto patient;
+    private List<DoctorDto> doctorDto;
 
-    private List<DoctorDto> doctors;
-
-    private List<DefinitionsDto> illnesses;
-
-    private DefinitionsDto city;
-
-    private DefinitionsDto address;
-
-    private Integer age;
-
-    private DefinitionsDto gender;
-
-    private Date LastVisit;
+    private PatientDto patientDto;
 
     public Integer getId() {
         return id;
@@ -32,67 +18,19 @@ public class DocumentDto {
         this.id = id;
     }
 
-    public PatientDto getPatient() {
-        return patient;
+    public List<DoctorDto> getDoctorDto() {
+        return doctorDto;
     }
 
-    public void setPatient(PatientDto patient) {
-        this.patient = patient;
+    public void setDoctorDto(List<DoctorDto> doctorDto) {
+        this.doctorDto = doctorDto;
     }
 
-    public List<DoctorDto> getDoctors() {
-        return doctors;
+    public PatientDto getPatientDto() {
+        return patientDto;
     }
 
-    public void setDoctors(List<DoctorDto> doctors) {
-        this.doctors = doctors;
-    }
-
-    public List<DefinitionsDto> getIllnesses() {
-        return illnesses;
-    }
-
-    public void setIllnesses(List<DefinitionsDto> illnesses) {
-        this.illnesses = illnesses;
-    }
-
-    public DefinitionsDto getCity() {
-        return city;
-    }
-
-    public void setCity(DefinitionsDto city) {
-        this.city = city;
-    }
-
-    public DefinitionsDto getAddress() {
-        return address;
-    }
-
-    public void setAddress(DefinitionsDto address) {
-        this.address = address;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public DefinitionsDto getGender() {
-        return gender;
-    }
-
-    public void setGender(DefinitionsDto gender) {
-        this.gender = gender;
-    }
-
-    public Date getLastVisit() {
-        return LastVisit;
-    }
-
-    public void setLastVisit(Date lastVisit) {
-        LastVisit = lastVisit;
+    public void setPatientDto(PatientDto patientDto) {
+        this.patientDto = patientDto;
     }
 }

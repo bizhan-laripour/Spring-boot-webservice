@@ -14,12 +14,17 @@ public class Doctor {
 
     private String lastName;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Definitions medSchool;
+    private Long medicineCode;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn
-    private List<Patient> patients;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Address address;
+
+    @OneToMany(cascade = CascadeType.ALL , mappedBy = "doctorTel")
+    private List<Telephone> telephone;
+
+    @ManyToOne
+    @JoinColumn(name = "document" , referencedColumnName = "id")
+    private Document document;
 
     public Integer getId() {
         return id;
@@ -45,19 +50,27 @@ public class Doctor {
         this.lastName = lastName;
     }
 
-    public Definitions getMedSchool() {
-        return medSchool;
+    public Long getMedicineCode() {
+        return medicineCode;
     }
 
-    public void setMedSchool(Definitions medSchool) {
-        this.medSchool = medSchool;
+    public void setMedicineCode(Long medicineCode) {
+        this.medicineCode = medicineCode;
     }
 
-    public List<Patient> getPatients() {
-        return patients;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setPatients(List<Patient> patients) {
-        this.patients = patients;
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public List<Telephone> getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(List<Telephone> telephone) {
+        this.telephone = telephone;
     }
 }

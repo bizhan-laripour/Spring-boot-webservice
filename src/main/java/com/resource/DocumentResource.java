@@ -1,24 +1,22 @@
 package com.resource;
 
-import com.entity.Doctor;
-import com.service.DoctorService;
+import com.entity.Document;
+import com.service.DocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+@RequestMapping(value = "/document")
 @RestController
-@RequestMapping(value = "/Doctor")
-public class DoctorResource {
-
+public class DocumentResource {
 
     @Autowired
-    private  DoctorService doctorService;
+    private DocumentService documentService;
 
-
-    @RequestMapping(path = "/save" , method = RequestMethod.POST)
-    public Doctor save( @RequestBody Doctor doctor){
-       return doctorService.add(doctor);
+    @RequestMapping(value = "/save" , method = RequestMethod.POST)
+    public Document save(@RequestBody Document document){
+        return documentService.save(document);
     }
 }
