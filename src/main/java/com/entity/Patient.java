@@ -8,13 +8,13 @@ public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    @Column
     private String name;
-
+    @Column
     private String lastName;
-
+    @Column
     private String username;
-
+    @Column
     private String password;
 
     @ManyToOne(fetch = FetchType.LAZY)
