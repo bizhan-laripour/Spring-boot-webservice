@@ -1,14 +1,19 @@
 package com.dto;
 
+import java.util.List;
+
 public class AddressDto {
 
     private Integer id;
 
     private String city;
 
-    private String state;
+    private String country;
 
     private String address;
+
+    private List<PatientDto> patientDtos;
+
 
     public Integer getId() {
         return id;
@@ -26,12 +31,12 @@ public class AddressDto {
         this.city = city;
     }
 
-    public String getState() {
-        return state;
+    public String getCountry() {
+        return country;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getAddress() {
@@ -40,5 +45,13 @@ public class AddressDto {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public List<PatientDto> getPatientDtos() {
+        return patientDtos;
+    }
+
+    public void setPatientDtos(List<PatientDto> patientDtos) {
+        this.patientDtos = patientDtos;
     }
 }

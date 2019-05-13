@@ -9,17 +9,14 @@ public class Telephone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String tell;
-
-    private Integer telephoneType;
+    private String name;
 
     @ManyToOne
-    @JoinColumn(name = "doctorTel" , referencedColumnName = "id")
-    private Doctor doctorTel;
+    @JoinColumn(name = "patient_id")
+    private Patient patient;
 
-    @ManyToOne
-    @JoinColumn(name = "patientTel" , referencedColumnName = "id")
-    private Patient patientTel;
+    @OneToOne(mappedBy = "telephone")
+    private Doctor doctor;
 
 
     public Integer getId() {
@@ -30,35 +27,27 @@ public class Telephone {
         this.id = id;
     }
 
-    public String getTell() {
-        return tell;
+    public String getName() {
+        return name;
     }
 
-    public void setTell(String tell) {
-        this.tell = tell;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Integer getTelephoneType() {
-        return telephoneType;
+    public Patient getPatient() {
+        return patient;
     }
 
-    public void setTelephoneType(Integer telephoneType) {
-        this.telephoneType = telephoneType;
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
-    public Doctor getDoctorTel() {
-        return doctorTel;
+    public Doctor getDoctor() {
+        return doctor;
     }
 
-    public void setDoctorTel(Doctor doctorTel) {
-        this.doctorTel = doctorTel;
-    }
-
-    public Patient getPatientTel() {
-        return patientTel;
-    }
-
-    public void setPatientTel(Patient patientTel) {
-        this.patientTel = patientTel;
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
 }

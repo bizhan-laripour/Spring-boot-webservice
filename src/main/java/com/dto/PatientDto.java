@@ -1,5 +1,7 @@
 package com.dto;
 
+import java.util.List;
+
 public class PatientDto {
 
     private Integer id;
@@ -8,9 +10,13 @@ public class PatientDto {
 
     private String lastName;
 
-    private AddressDto address;
+    private Integer age;
 
-    private TelephoneDto telephone;
+    private List<DoctorDto> doctorDtos;
+
+    private List<TelephoneDto> telephoneDto;
+
+    private List<AddressDto> addressDtos;
 
     public Integer getId() {
         return id;
@@ -36,19 +42,36 @@ public class PatientDto {
         this.lastName = lastName;
     }
 
-    public AddressDto getAddress() {
-        return address;
+    public Integer getAge() {
+        return age;
     }
 
-    public void setAddress(AddressDto address) {
-        this.address = address;
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
-    public TelephoneDto getTelephone() {
-        return telephone;
+    public List<TelephoneDto> getTelephoneDto() {
+        return telephoneDto;
     }
 
-    public void setTelephone(TelephoneDto telephone) {
-        this.telephone = telephone;
+    public void setTelephoneDto(List<TelephoneDto> telephoneDto) {
+        this.telephoneDto = telephoneDto;
+    }
+
+    public List<AddressDto> getAddressDtos() {
+        return addressDtos;
+    }
+
+    public void setAddressDtos(List<AddressDto> addressDtos) {
+        this.addressDtos = addressDtos;
+    }
+
+
+    public List<DoctorDto> getDoctorDtos() {
+        return doctorDtos;
+    }
+
+    public void setDoctorDtos(List<DoctorDto> doctorDtos) {
+        this.doctorDtos = doctorDtos;
     }
 }

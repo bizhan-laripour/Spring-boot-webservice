@@ -1,9 +1,8 @@
 package com.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Address {
@@ -14,9 +13,18 @@ public class Address {
 
     private String city;
 
-    private String state;
+    private String country;
 
     private String address;
+
+    @ManyToMany(cascade = CascadeType.ALL , mappedBy = "address" , fetch = FetchType.LAZY)
+    private List<Patient> patients;
+
+
+
+    @OneToOne(mappedBy = "address")
+    private Doctor doctor;
+
 
     public Integer getId() {
         return id;
@@ -34,12 +42,12 @@ public class Address {
         this.city = city;
     }
 
-    public String getState() {
-        return state;
+    public String getCountry() {
+        return country;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getAddress() {
@@ -48,5 +56,13 @@ public class Address {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public List<Patient> getPatients() {
+        return patients;
+    }
+
+    public void setPatients(List<Patient> patients) {
+        this.patients = patients;
     }
 }

@@ -1,13 +1,15 @@
 package com.dto;
 
-public class TelephoneDto {
+import java.util.List;
 
+public class TelephoneDto {
 
     private Integer id;
 
     private String tell;
 
-    private Integer telephoneType;
+    private PatientDto patientDto;
+
 
     public Integer getId() {
         return id;
@@ -25,11 +27,11 @@ public class TelephoneDto {
         this.tell = tell;
     }
 
-    public Integer getTelephoneType() {
-        return telephoneType;
+    public PatientDto getPatientDto() {
+        return patientDto;
     }
 
-    public void setTelephoneType(Integer telephoneType) {
-        this.telephoneType = telephoneType;
+    public void setPatientDto(PatientDto patientDto) {
+        this.patientDto = patientDto;
     }
 }
