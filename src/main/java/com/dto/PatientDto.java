@@ -1,31 +1,20 @@
-package com.entity;
+package com.dto;
 
-import javax.persistence.*;
+public class PatientDto {
 
-@Entity
-public class Patient {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
 
     private String lastName;
 
+    private AddressDto address;
+
+    private TelephoneDto telephone;
+
     private String username;
 
-    private String password;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "address_id")
-    private Address address;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "telephone_id")
-    private Telephone telephone;
-
-
+    private String passord;
 
     public Integer getId() {
         return id;
@@ -51,19 +40,19 @@ public class Patient {
         this.lastName = lastName;
     }
 
-    public Address getAddress() {
+    public AddressDto getAddress() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public void setAddress(AddressDto address) {
         this.address = address;
     }
 
-    public Telephone getTelephone() {
+    public TelephoneDto getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(Telephone telephone) {
+    public void setTelephone(TelephoneDto telephone) {
         this.telephone = telephone;
     }
 
@@ -75,11 +64,11 @@ public class Patient {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPassord() {
+        return passord;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassord(String passord) {
+        this.passord = passord;
     }
 }

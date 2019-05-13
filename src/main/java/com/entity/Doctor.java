@@ -13,11 +13,11 @@ public class Doctor {
 
     private String lastName;
 
-    @OneToOne(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY )
     @JoinColumn(name = "address_id")
     private Address address;
 
-    @OneToOne(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "telephon_id")
     private Telephone telephone;
 
@@ -25,8 +25,6 @@ public class Doctor {
     @JoinColumn(name = "expert_id")
     private Expert expert;
 
-//    @OneToOne(mappedBy = "doctor")
-//    private Document document;
 
     public Integer getId() {
         return id;
@@ -76,11 +74,5 @@ public class Doctor {
         this.expert = expert;
     }
 
-//    public Document getDocument() {
-//        return document;
-//    }
-//
-//    public void setDocument(Document document) {
-//        this.document = document;
-//    }
+
 }

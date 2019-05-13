@@ -11,11 +11,6 @@ public class Telephone {
 
     private String tell;
 
-//    @OneToOne(mappedBy = "telephone")
-//    private Patient patient;
-
-//    @OneToOne(mappedBy = "telephone")
-//    private Doctor doctor;
 
     public Integer getId() {
         return id;

@@ -1,13 +1,7 @@
-package com.entity;
+package com.dto;
 
-import javax.persistence.*;
-import java.util.List;
+public class AddressDto {
 
-@Entity
-public class Address {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String country;
@@ -17,7 +11,6 @@ public class Address {
     private String state;
 
     private String address;
-
 
     public Integer getId() {
         return id;
@@ -58,5 +51,4 @@ public class Address {
     public void setAddress(String address) {
         this.address = address;
     }
-
 }

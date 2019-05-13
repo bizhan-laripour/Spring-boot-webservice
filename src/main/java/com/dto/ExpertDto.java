@@ -1,17 +1,15 @@
-package com.entity;
+package com.dto;
 
-import javax.persistence.*;
 import java.util.List;
 
-@Entity
-public class Expert {
+public class ExpertDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String title;
 
+
+    private List<DoctorDto> doctors;
 
     public Integer getId() {
         return id;
@@ -29,4 +27,11 @@ public class Expert {
         this.title = title;
     }
 
+    public List<DoctorDto> getDoctors() {
+        return doctors;
+    }
+
+    public void setDoctors(List<DoctorDto> doctors) {
+        this.doctors = doctors;
+    }
 }
