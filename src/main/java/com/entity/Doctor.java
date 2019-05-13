@@ -8,9 +8,9 @@ public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    @Column
     private String name;
-
+    @Column
     private String lastName;
 
     @OneToOne(fetch = FetchType.LAZY )

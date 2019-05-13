@@ -1,6 +1,7 @@
 package com.entity;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 public class Document {
@@ -16,6 +17,13 @@ public class Document {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
+
+    @Column
+    private Date nextVisit;
+    @Column
+    private Date lastVisit;
+    @Column
+    private String description;
 
     public Integer getId() {
         return id;
@@ -39,5 +47,29 @@ public class Document {
 
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
+    }
+
+    public Date getNextVisit() {
+        return nextVisit;
+    }
+
+    public void setNextVisit(Date nextVisit) {
+        this.nextVisit = nextVisit;
+    }
+
+    public Date getLastVisit() {
+        return lastVisit;
+    }
+
+    public void setLastVisit(Date lastVisit) {
+        this.lastVisit = lastVisit;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

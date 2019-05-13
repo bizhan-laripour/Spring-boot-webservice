@@ -9,13 +9,13 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    @Column
     private String country;
-
+    @Column
     private String city;
-
+    @Column
     private String state;
-
+    @Column
     private String address;
 
 

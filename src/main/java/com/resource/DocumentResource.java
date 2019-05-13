@@ -1,7 +1,7 @@
 package com.resource;
 
 import com.entity.Document;
-import com.entity.Telephone;
+import com.entity.Patient;
 import com.exception.ResponseBody;
 import com.exception.TncException;
 import com.service.DocumentService;
@@ -49,6 +49,24 @@ public class DocumentResource {
             return new ResponseBody(documentService.findById(id));
         }catch (TncException ex){
             throw new TncException("error_in_fetching_by_id");
+        }
+    }
+
+    @RequestMapping(value = "/getDocumentReport" , method = RequestMethod.POST)
+    public ResponseBody getDocumentReport(@RequestBody Patient patient){
+        try{
+            return new ResponseBody(documentService.getDocumentReport(patient));
+        }catch(TncException ex){
+            throw new TncException(ex.getMessage());
+        }
+    }
+
+    @RequestMapping(value = "/getDocumentReportByJpa" , method = RequestMethod.POST)
+    public ResponseBody getDocumentReportByJpa(@RequestBody Patient patient){
+        try {
+            return  new ResponseBody(documentService.documetReportByJpa(patient));
+        }catch (TncException ex){
+            throw  new TncException(ex.getMessage());
         }
     }
 }
