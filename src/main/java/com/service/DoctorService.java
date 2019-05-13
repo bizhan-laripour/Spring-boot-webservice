@@ -17,4 +17,5 @@ public class DoctorService extends GenericService<Doctor , Integer> {
     }
 
 
+
 }

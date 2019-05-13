@@ -17,6 +17,7 @@ public class Patient {
     private Integer age;
 
 
+
     @ManyToMany(cascade = CascadeType.ALL , fetch = FetchType.LAZY)
     @JoinTable(name = "Document" , joinColumns = {@JoinColumn(name="patient_id")} ,inverseJoinColumns = {@JoinColumn(name="doctor_id")})
     private List<Doctor> doctors;

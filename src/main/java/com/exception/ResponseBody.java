@@ -3,6 +3,8 @@ package com.exception;
 public class ResponseBody {
 
 
+
+
     private Boolean status;
 
     private Object object;
