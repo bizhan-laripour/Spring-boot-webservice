@@ -1,6 +1,5 @@
 package com.entity;
 
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,21 +10,19 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    private String country;
 
     private String city;
 
-    private String country;
+    private String state;
 
     private String address;
 
-    @ManyToMany(cascade = CascadeType.ALL , mappedBy = "address" , fetch = FetchType.LAZY)
-    private List<Patient> patients;
+//    @OneToMany(mappedBy = "address")
+//    private List<Patient> patients;
 
-
-
-    @OneToOne(mappedBy = "address")
-    private Doctor doctor;
-
+//    @OneToOne(mappedBy = "address")
+//    private Doctor doctor;
 
     public Integer getId() {
         return id;
@@ -33,14 +30,6 @@ public class Address {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
     }
 
     public String getCountry() {
@@ -51,6 +40,22 @@ public class Address {
         this.country = country;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -59,11 +64,19 @@ public class Address {
         this.address = address;
     }
 
-    public List<Patient> getPatients() {
-        return patients;
-    }
+//    public List<Patient> getPatients() {
+//        return patients;
+//    }
+//
+//    public void setPatients(List<Patient> patients) {
+//        this.patients = patients;
+//    }
 
-    public void setPatients(List<Patient> patients) {
-        this.patients = patients;
-    }
+//    public Doctor getDoctor() {
+//        return doctor;
+//    }
+//
+//    public void setDoctor(Doctor doctor) {
+//        this.doctor = doctor;
+//    }
 }

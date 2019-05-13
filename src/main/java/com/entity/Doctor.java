@@ -13,14 +13,20 @@ public class Doctor {
 
     private String lastName;
 
-    private String expert;
-
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id")
     private Address address;
 
-
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+    @JoinColumn(name = "telephon_id")
     private Telephone telephone;
+
+    @ManyToOne(fetch = FetchType.LAZY , cascade = CascadeType.ALL)
+    @JoinColumn(name = "expert_id")
+    private Expert expert;
+
+//    @OneToOne(mappedBy = "doctor")
+//    private Document document;
 
     public Integer getId() {
         return id;
@@ -46,14 +52,6 @@ public class Doctor {
         this.lastName = lastName;
     }
 
-    public String getExpert() {
-        return expert;
-    }
-
-    public void setExpert(String expert) {
-        this.expert = expert;
-    }
-
     public Address getAddress() {
         return address;
     }
@@ -69,4 +67,20 @@ public class Doctor {
     public void setTelephone(Telephone telephone) {
         this.telephone = telephone;
     }
+
+    public Expert getExpert() {
+        return expert;
+    }
+
+    public void setExpert(Expert expert) {
+        this.expert = expert;
+    }
+
+//    public Document getDocument() {
+//        return document;
+//    }
+//
+//    public void setDocument(Document document) {
+//        this.document = document;
+//    }
 }

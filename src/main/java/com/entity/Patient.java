@@ -1,7 +1,6 @@
 package com.entity;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Patient {
@@ -14,20 +13,17 @@ public class Patient {
 
     private String lastName;
 
-    private Integer age;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "address_id")
+    private Address address;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "telephone_id")
+    private Telephone telephone;
 
 
-
-    @ManyToMany(cascade = CascadeType.ALL , fetch = FetchType.LAZY)
-    @JoinTable(name = "Document" , joinColumns = {@JoinColumn(name="patient_id")} ,inverseJoinColumns = {@JoinColumn(name="doctor_id")})
-    private List<Doctor> doctors;
-
-    @OneToMany(cascade = CascadeType.ALL , mappedBy = "patient")
-    private List<Telephone> telephones;
-
-    @ManyToMany(cascade = CascadeType.ALL , fetch = FetchType.LAZY)
-    @JoinTable(name = "address_patient" , joinColumns = {@JoinColumn(name="patient_id")} ,inverseJoinColumns = {@JoinColumn(name="address_id")})
-    private List<Address> address;
+//    @OneToOne(mappedBy = "patient")
+//    private Document document;
 
     public Integer getId() {
         return id;
@@ -53,35 +49,27 @@ public class Patient {
         this.lastName = lastName;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
-    public List<Doctor> getDoctors() {
-        return doctors;
-    }
-
-    public void setDoctors(List<Doctor> doctors) {
-        this.doctors = doctors;
-    }
-
-    public List<Telephone> getTelephones() {
-        return telephones;
-    }
-
-    public void setTelephones(List<Telephone> telephones) {
-        this.telephones = telephones;
-    }
-
-    public List<Address> getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(List<Address> address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
+
+    public Telephone getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(Telephone telephone) {
+        this.telephone = telephone;
+    }
+
+//    public Document getDocument() {
+//        return document;
+//    }
+//
+//    public void setDocument(Document document) {
+//        this.document = document;
+//    }
 }

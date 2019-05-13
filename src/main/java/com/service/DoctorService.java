@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DoctorService extends GenericService<Doctor , Integer> {
+public class DoctorService extends GenericService<Doctor, Integer> {
 
     @Autowired
     private DoctorRepository doctorRepository;
