@@ -19,6 +19,7 @@ public class Telephone {
     private Doctor doctor;
 
 
+
     public Integer getId() {
         return id;
     }

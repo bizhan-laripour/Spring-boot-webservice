@@ -6,4 +6,5 @@ import org.springframework.data.repository.NoRepositoryBean;
 @NoRepositoryBean
 public interface GenericRepository<T, K> extends JpaRepository<T,K> {
 
+
 }

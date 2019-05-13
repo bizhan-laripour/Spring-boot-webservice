@@ -29,6 +29,7 @@ public class DoctorResource {
     }
 
 
+
     @RequestMapping(value = "/delete" , method = RequestMethod.DELETE)
     public Doctor delete(@RequestBody Doctor doctor) throws Exception {
         try {

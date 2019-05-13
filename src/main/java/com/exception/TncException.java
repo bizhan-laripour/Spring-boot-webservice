@@ -5,6 +5,7 @@ public class TncException extends RuntimeException{
 
     private String message;
 
+
     private Object object;
 
     private Object[] args;

@@ -12,6 +12,7 @@ public class DoctorDto {
 
     private AddressDto addressDto;
 
+
     private TelephoneDto telephoneDto;
 
     private List<PatientDto> patientDtos;
