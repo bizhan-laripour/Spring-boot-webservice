@@ -23,11 +23,35 @@
         <version>2.1.4.RELEASE</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<!--    <dependency>-->
+<!--        <groupId>mysql</groupId>-->
+<!--        <artifactId>mysql-connector-java</artifactId>-->
+<!--        <version>8.0.15</version>-->
+<!--    </dependency>-->
+
+    <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
     <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.15</version>
+        <groupId>com.microsoft.sqlserver</groupId>
+        <artifactId>mssql-jdbc</artifactId>
+        <version>7.3.0.jre8-preview</version>
+        <scope>runtime</scope>
     </dependency>
+
+
+<!--     https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc-->
+<!--    <dependency>-->
+<!--        <groupId>com.microsoft.sqlserver</groupId>-->
+<!--        <artifactId>mssql-jdbc</artifactId>-->
+<!--        <version>7.3.0.jre8-preview</version>-->
+<!--        <scope>test</scope>-->
+<!--    </dependency>-->
+
+<!--        <dependency>-->
+<!--        <groupId>com.microsoft.sqlserver</groupId>-->
+<!--        <artifactId>mssql-jdbc</artifactId>-->
+<!--        <scope>runtime</scope>-->
+<!--    </dependency>-->
+
     <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
     <dependency>
         <groupId>io.springfox</groupId>
