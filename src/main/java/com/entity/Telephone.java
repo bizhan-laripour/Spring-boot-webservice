@@ -9,15 +9,7 @@ public class Telephone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;
-
-    @ManyToOne
-    @JoinColumn(name = "patient_id")
-    private Patient patient;
-
-    @OneToOne(mappedBy = "telephone")
-    private Doctor doctor;
-
+    private String tell;
 
 
     public Integer getId() {
@@ -28,27 +20,27 @@ public class Telephone {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTell() {
+        return tell;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTell(String tell) {
+        this.tell = tell;
     }
 
-    public Patient getPatient() {
-        return patient;
-    }
-
-    public void setPatient(Patient patient) {
-        this.patient = patient;
-    }
-
-    public Doctor getDoctor() {
-        return doctor;
-    }
-
-    public void setDoctor(Doctor doctor) {
-        this.doctor = doctor;
-    }
+//    public Patient getPatient() {
+//        return patient;
+//    }
+//
+//    public void setPatient(Patient patient) {
+//        this.patient = patient;
+//    }
+//
+//    public Doctor getDoctor() {
+//        return doctor;
+//    }
+//
+//    public void setDoctor(Doctor doctor) {
+//        this.doctor = doctor;
+//    }
 }

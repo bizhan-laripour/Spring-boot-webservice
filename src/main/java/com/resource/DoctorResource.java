@@ -1,6 +1,8 @@
 package com.resource;
 
 import com.entity.Doctor;
+import com.exception.ResponseBody;
+import com.exception.TncException;
 import com.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,11 +22,11 @@ public class DoctorResource {
 
 
     @RequestMapping(value = "/save" , method = RequestMethod.POST)
-    public Doctor save(@RequestBody Doctor doctor) throws Exception {
+    public ResponseBody save(@RequestBody Doctor doctor) throws Exception {
         try {
-            return doctorService.save(doctor);
-        }catch (Exception ex){
-            throw new Exception("");
+            return new ResponseBody(doctorService.save(doctor));
+        }catch (TncException ex){
+            throw new TncException("hey");
         }
     }
 

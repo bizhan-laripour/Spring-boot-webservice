@@ -12,7 +12,7 @@ public class GenericService<T, K> {
 
     private GenericRepository<T , K> genericRepository;
 
-    public GenericService(GenericRepository<T , K> genericRepository){
+    public GenericService(GenericRepository genericRepository){
         this.genericRepository = genericRepository;
     }
 

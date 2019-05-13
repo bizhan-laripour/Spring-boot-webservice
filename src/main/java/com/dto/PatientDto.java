@@ -1,7 +1,5 @@
 package com.dto;
 
-import java.util.List;
-
 public class PatientDto {
 
     private Integer id;
@@ -10,14 +8,13 @@ public class PatientDto {
 
     private String lastName;
 
-    private Integer age;
+    private AddressDto address;
 
-    private List<DoctorDto> doctorDtos;
+    private TelephoneDto telephone;
 
-    private List<TelephoneDto> telephoneDto;
+    private String username;
 
-    private List<AddressDto> addressDtos;
-
+    private String passord;
 
     public Integer getId() {
         return id;
@@ -43,36 +40,35 @@ public class PatientDto {
         this.lastName = lastName;
     }
 
-    public Integer getAge() {
-        return age;
+    public AddressDto getAddress() {
+        return address;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setAddress(AddressDto address) {
+        this.address = address;
     }
 
-    public List<TelephoneDto> getTelephoneDto() {
-        return telephoneDto;
+    public TelephoneDto getTelephone() {
+        return telephone;
     }
 
-    public void setTelephoneDto(List<TelephoneDto> telephoneDto) {
-        this.telephoneDto = telephoneDto;
+    public void setTelephone(TelephoneDto telephone) {
+        this.telephone = telephone;
     }
 
-    public List<AddressDto> getAddressDtos() {
-        return addressDtos;
+    public String getUsername() {
+        return username;
     }
 
-    public void setAddressDtos(List<AddressDto> addressDtos) {
-        this.addressDtos = addressDtos;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-
-    public List<DoctorDto> getDoctorDtos() {
-        return doctorDtos;
+    public String getPassord() {
+        return passord;
     }
 
-    public void setDoctorDtos(List<DoctorDto> doctorDtos) {
-        this.doctorDtos = doctorDtos;
+    public void setPassord(String passord) {
+        this.passord = passord;
     }
 }

@@ -1,7 +1,5 @@
 package com.dto;
 
-import java.util.List;
-
 public class DoctorDto {
 
     private Integer id;
@@ -10,12 +8,14 @@ public class DoctorDto {
 
     private String lastName;
 
-    private AddressDto addressDto;
+
+    private AddressDto address;
 
 
-    private TelephoneDto telephoneDto;
+    private TelephoneDto telephone;
 
-    private List<PatientDto> patientDtos;
+
+    private ExpertDto expert;
 
     public Integer getId() {
         return id;
@@ -41,28 +41,27 @@ public class DoctorDto {
         this.lastName = lastName;
     }
 
-    public AddressDto getAddressDto() {
-        return addressDto;
+    public AddressDto getAddress() {
+        return address;
     }
 
-    public void setAddressDto(AddressDto addressDto) {
-        this.addressDto = addressDto;
+    public void setAddress(AddressDto address) {
+        this.address = address;
     }
 
-    public TelephoneDto getTelephoneDto() {
-        return telephoneDto;
+    public TelephoneDto getTelephone() {
+        return telephone;
     }
 
-    public void setTelephoneDto(TelephoneDto telephoneDto) {
-        this.telephoneDto = telephoneDto;
+    public void setTelephone(TelephoneDto telephone) {
+        this.telephone = telephone;
     }
 
-
-    public List<PatientDto> getPatientDtos() {
-        return patientDtos;
+    public ExpertDto getExpert() {
+        return expert;
     }
 
-    public void setPatientDtos(List<PatientDto> patientDtos) {
-        this.patientDtos = patientDtos;
+    public void setExpert(ExpertDto expert) {
+        this.expert = expert;
     }
 }

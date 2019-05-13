@@ -1,6 +1,5 @@
 package com.entity;
 
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,20 +10,13 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    private String country;
 
     private String city;
 
-    private String country;
+    private String state;
 
     private String address;
-
-    @ManyToMany(cascade = CascadeType.ALL , mappedBy = "address" , fetch = FetchType.LAZY)
-    private List<Patient> patients;
-
-
-
-    @OneToOne(mappedBy = "address")
-    private Doctor doctor;
 
 
     public Integer getId() {
@@ -35,6 +27,14 @@ public class Address {
         this.id = id;
     }
 
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
     public String getCity() {
         return city;
     }
@@ -43,12 +43,12 @@ public class Address {
         this.city = city;
     }
 
-    public String getCountry() {
-        return country;
+    public String getState() {
+        return state;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setState(String state) {
+        this.state = state;
     }
 
     public String getAddress() {
@@ -59,11 +59,4 @@ public class Address {
         this.address = address;
     }
 
-    public List<Patient> getPatients() {
-        return patients;
-    }
-
-    public void setPatients(List<Patient> patients) {
-        this.patients = patients;
-    }
 }
