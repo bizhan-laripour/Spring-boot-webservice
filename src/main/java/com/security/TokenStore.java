@@ -17,6 +17,7 @@ public class TokenStore {
 //                .setId("something")
 //                .setAudience("something")
 //                .setSubject("something")
+
                 .setExpiration(new Date(System.currentTimeMillis()+SecurityConstants.EXPIRATION_TIME))
                 .signWith(algorithm , SecurityConstants.SECRET);
         return SecurityConstants.TOKEN_PREFIX + jwtBuilder.compact();

@@ -4,6 +4,7 @@ package com.security;
 public class SecurityConstants {
 
 
+
     public static final String SECRET = "SecretKeyToGenJWTs";
 
     public static final long EXPIRATION_TIME = 1*60*60*1000;
